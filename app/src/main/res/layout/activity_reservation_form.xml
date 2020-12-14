@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ReservationForm"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#C61427"
+        app:titleTextColor="#FFFFFF"
+        app:popupTheme="@style/PopupOverlay"
+        android:theme="@style/AppTheme.ActionBar"/>
+
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.example.mparking.ReservationFragment1"
+        tools:layout="@layout/fragment_reservation1"
+        android:id="@+id/fragment1"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/toolbar"
+        />
+
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.example.mparking.ReservationFragment2"
+        tools:layout="@layout/fragment_reservation2"
+        android:id="@+id/fragment2"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/fragment1"
+       />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat.Inverse"
+        android:background="@drawable/button"
+        android:text="СЛЕДНО"
+        android:id="@+id/next"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:clickable="true"
+        android:onClick="clickNext"/>
+
+</RelativeLayout>

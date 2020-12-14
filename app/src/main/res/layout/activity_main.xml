@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_above="@id/k_ime"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/k_ime"
+        android:layout_above="@id/lozinka"
+        android:hint="Корисничко име"
+        android:layout_centerHorizontal="true"
+        android:focusable="true"
+        />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lozinka"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:hint="Лозинка"
+        android:inputType="textPassword"
+        android:focusable="true"/>
+
+    <Button
+        style="@style/TextAppearance.AppCompat.Inverse"
+        android:id="@+id/button1"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lozinka"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:onClick="najavaClick"
+        android:text="НАЈАВА"
+        android:background="@drawable/button"/>
+
+    <Button
+        style="@style/TextAppearance.AppCompat.Inverse"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="РЕГИСТРАЦИЈА"
+        android:layout_below="@id/button1"
+        android:layout_centerHorizontal="true"
+        android:onClick="registracijaClick"
+        android:layout_margin="30dp"
+        android:background="@drawable/button"
+        android:id="@+id/button2" />
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistracijaActivity">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_above="@id/ime"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/ime"
+        android:layout_above="@id/korime"
+        android:hint="Име и презиме"
+        android:layout_centerHorizontal="true"
+        android:focusable="true" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/korime"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:hint="Корисничко име"
+        android:focusable="true"/>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:hint="Лозинка"
+        android:inputType="textPassword"
+        android:layout_below="@id/korime"
+        android:focusable="true"/>
+
+    <Button
+        style="@style/TextAppearance.AppCompat.Inverse"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="40dp"
+        android:background="@drawable/button"
+        android:onClick="database_input"
+        android:text="РЕГИСТРАЦИЈА"
+        android:id="@+id/button3"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="* Во полето корисничко име внесете ја регистарската ознака на вашето возило"
+        android:textStyle="bold"/>
+
+</RelativeLayout>
