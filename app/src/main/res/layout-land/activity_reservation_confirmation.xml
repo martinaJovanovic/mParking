@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReservationConfirmation"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#C61427"
+        app:titleTextColor="#FFFFFF"
+        app:popupTheme="@style/PopupOverlay"
+        android:theme="@style/AppTheme.ActionBar"/>
+
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.example.mparking.ReservationConfirmationFragment1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        tools:layout="@layout/fragment_reservation_confirmation1" />
+
+    <fragment
+        android:id="@+id/MapFragment"
+        android:name="com.example.mparking.ReservationConfirmationFragment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/successFragment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="40dp"
+        tools:layout="@layout/fragment_reservation_confirmation2" />
+
+
+</RelativeLayout>

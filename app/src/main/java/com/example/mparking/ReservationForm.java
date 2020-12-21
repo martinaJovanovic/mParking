@@ -36,6 +36,7 @@ public class ReservationForm extends AppCompatActivity {
         return true;
     }
 
+    // отворање нова активност "ParkingPlaces" со клик на копчето "Следно"
     public void clickNext(View view) {
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
         Intent intent = getIntent();
@@ -50,13 +51,11 @@ public class ReservationForm extends AppCompatActivity {
         String mesec = String.valueOf(month);
         String godina = String.valueOf(year);
         String datum = den + "." + mesec + "." + godina;
-        db = openOrCreateDatabase("korisnici", MODE_PRIVATE, null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS rezervacii(korisnicko_ime VARCHAR, grad VARCHAR, vreme VARCHAR, datum VARCHAR);");
-        ContentValues cvalues = new ContentValues();
-        cvalues.put("korisnicko_ime", korisnicko_ime);
-        cvalues.put("grad", ime_grad);
-        cvalues.put("vreme", vreme);
-        cvalues.put("datum", datum);
-        db.insert("rezervacii", null, cvalues);
+        Intent Intent = new Intent (this, ParkingPlaces.class);
+        Intent.putExtra("datum", datum);
+        Intent.putExtra("vreme", vreme);
+        Intent.putExtra("ime_korisnik", korisnicko_ime);
+        Intent.putExtra("ime_grad", ime_grad);
+        startActivity(Intent);
     }
 }

@@ -23,10 +23,12 @@ public class RegistracijaActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registracija);
+        // креирање на базата "корисници", креирање на табелата корисници
         db = openOrCreateDatabase("korisnici", MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS korisnici(ime_prezime VARCHAR, korisnicko_ime VARCHAR, password VARCHAR);");
     }
 
+    // внесување податоци во базата
     public void database_input(View view)
     {
         ime_input = (EditText) findViewById(R.id.ime);
