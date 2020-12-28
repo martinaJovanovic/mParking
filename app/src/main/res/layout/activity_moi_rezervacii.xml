@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MoiRezervacii"
+    android:background="#E7E7E7">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#C61427"
+        app:titleTextColor="#FFFFFF"
+        app:popupTheme="@style/PopupOverlay"
+        android:theme="@style/AppTheme.ActionBar"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Мои резервации"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:id="@+id/tv_rezervacii"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/toolbar"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:textAllCaps="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rezervacii"
+        android:layout_below="@id/tv_rezervacii"
+        android:layout_marginTop="30dp"/>
+
+</RelativeLayout>

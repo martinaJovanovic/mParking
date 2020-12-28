@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QRActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#C61427"
+        app:titleTextColor="#FFFFFF"
+        app:popupTheme="@style/PopupOverlay"
+        android:theme="@style/AppTheme.ActionBar"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/qrcode"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/qrtext"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вашиот QR код\n за валидација е:"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/toolbar"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:id="@+id/qrtext"/>
+
+    <Button
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/qrcode"
+        android:layout_centerHorizontal="true"
+        android:text="навигација"
+        android:background="@drawable/button"
+        android:onClick="navigacija"
+        style="@style/TextAppearance.AppCompat.Inverse"
+        android:layout_marginTop="100dp"/>
+
+</RelativeLayout>
