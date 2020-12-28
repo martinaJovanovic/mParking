@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ReservationConfirmation">
 
-
     <TextView
         android:id="@+id/successFragment"
         android:layout_width="wrap_content"

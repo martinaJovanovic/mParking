@@ -22,11 +22,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         tools:layout="@layout/fragment_reservation_confirmation1" />
 
     <Button
-        android:layout_width="120dp"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         style="@style/TextAppearance.AppCompat.Inverse"
         android:background="@drawable/button"
@@ -35,6 +35,15 @@
         android:layout_below="@id/successFragment"
         android:clickable="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:onClick="navigacijaClick"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/navigation"
+        android:id="@+id/iv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
 </RelativeLayout>

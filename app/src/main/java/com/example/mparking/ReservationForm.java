@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -18,7 +19,9 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 
 public class ReservationForm extends AppCompatActivity {
-    SQLiteDatabase db;
+
+    public String korisnicko_ime;
+    public String ime_grad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,9 @@ public class ReservationForm extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         Fragment frag1 =  getFragmentManager().findFragmentById(R.id.fragment1);
         Fragment frag2 =  getFragmentManager().findFragmentById(R.id.fragment2);
+        Intent intent = getIntent();
+        ime_grad = intent.getStringExtra("ime_grad");
+        korisnicko_ime = intent.getStringExtra("ime_korisnik");
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -36,12 +42,23 @@ public class ReservationForm extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item)
+    {
+        int id = item.getItemId();
+        if (id == R.id.moi_rezervacii)
+        {
+            Intent intent = new Intent(this, MoiRezervacii.class);
+            intent.putExtra("korisnicko_ime", korisnicko_ime);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     // отворање нова активност "ParkingPlaces" со клик на копчето "Следно"
     public void clickNext(View view) {
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        Intent intent = getIntent();
-        String ime_grad = intent.getStringExtra("ime_grad");
-        String korisnicko_ime = intent.getStringExtra("ime_korisnik");
         String vreme = spinner.getSelectedItem().toString();
         DatePicker dp = (DatePicker) findViewById(R.id.datePicker);
         int day = dp.getDayOfMonth();
@@ -58,4 +75,5 @@ public class ReservationForm extends AppCompatActivity {
         Intent.putExtra("ime_grad", ime_grad);
         startActivity(Intent);
     }
+
 }

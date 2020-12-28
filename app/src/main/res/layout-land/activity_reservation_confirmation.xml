@@ -28,7 +28,7 @@
 
     <fragment
         android:id="@+id/MapFragment"
-        android:name="com.example.mparking.ReservationConfirmationFragment2"
+        android:name="com.example.mparking.MapsFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/successFragment"
@@ -37,7 +37,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
         android:layout_marginBottom="40dp"
-        tools:layout="@layout/fragment_reservation_confirmation2" />
+        tools:layout="@layout/fragment_maps" />
 
 
 </RelativeLayout>

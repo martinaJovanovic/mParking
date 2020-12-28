@@ -15,6 +15,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,28 +29,18 @@ import java.util.ListIterator;
 public class Cities extends AppCompatActivity {
     RecyclerView mRecyclerView;
     MyAdapter mAdapter;
-    SQLiteDatabase db;
+    DBHelper db;
+    String extra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cities);
         Intent intent = getIntent();
-        String extra = intent.getStringExtra("ime_korisnik");
-        // преземање на имињата на градовите од табелата "gradovi"
-        db = openOrCreateDatabase("korisnici", MODE_PRIVATE, null);
-        ArrayList<String> lista = new ArrayList<>();
-        Cursor c = db.rawQuery("SELECT ime_grad FROM " +" gradovi",null);
-        if (c.getCount()==0)
-        {
-            return;
-        }
-
-        while (c.moveToNext())
-        {
-            lista.add(c.getString(0));
-        }
-
+        extra = intent.getStringExtra("ime_korisnik");
+        // преземање на имињата на градовите од табелата "Gradovi"
+        db = new DBHelper(this);
+        ArrayList<String> lista = db.getCities();
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         mRecyclerView = (RecyclerView) findViewById(R.id.list);
@@ -65,5 +56,20 @@ public class Cities extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;
+    }
+
+    // отворање на активноста "Мои резервации"
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item)
+    {
+        int id = item.getItemId();
+        if (id == R.id.moi_rezervacii)
+        {
+            Intent intent = new Intent(this, MoiRezervacii.class);
+            intent.putExtra("korisnicko_ime", extra);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

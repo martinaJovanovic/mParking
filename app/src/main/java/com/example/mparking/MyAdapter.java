@@ -24,11 +24,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
     public Button button;
     private String korisnicko_ime;
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView myName;
-        public ImageView Pic;
+        public TextView city;
         public ViewHolder(View itemView) {
             super(itemView);
-            myName = (TextView) itemView.findViewById(R.id.city);
+            city = (TextView) itemView.findViewById(R.id.city);
             button = (Button) itemView.findViewById(R.id.buttonReservation);
         }
     }
@@ -50,7 +49,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, int i) {
         final String entry = myList.get(i);
-        viewHolder.myName.setText(entry);
+        viewHolder.city.setText(entry);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -58,14 +58,16 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/red"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="10dp"
+            android:id="@+id/zafateni"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/green"
             android:layout_marginTop="60dp"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="10dp"
+            android:id="@+id/slobodni"/>
 
     </RelativeLayout>
 

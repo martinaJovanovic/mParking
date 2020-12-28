@@ -16,40 +16,48 @@
         android:layout_marginBottom="20dp" />
 
     <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
         android:id="@+id/k_ime"
         android:layout_above="@id/lozinka"
         android:hint="Корисничко име"
         android:layout_centerHorizontal="true"
         android:focusable="true"
+        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+        android:drawablePadding="12dp"
+        android:background="@drawable/input"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="12dp"
         />
 
     <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
         android:id="@+id/lozinka"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:hint="Лозинка"
         android:inputType="textPassword"
-        android:focusable="true"/>
+        android:focusable="true"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="10dp"
+        android:background="@drawable/input"/>
 
     <Button
         style="@style/TextAppearance.AppCompat.Inverse"
         android:id="@+id/button1"
-        android:layout_width="250dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/lozinka"
         android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
+        android:layout_marginTop="70dp"
         android:onClick="najavaClick"
         android:text="НАЈАВА"
         android:background="@drawable/button"/>
 
     <Button
         style="@style/TextAppearance.AppCompat.Inverse"
-        android:layout_width="250dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:text="РЕГИСТРАЦИЈА"
         android:layout_below="@id/button1"
